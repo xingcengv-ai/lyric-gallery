@@ -36,3 +36,12 @@
     @apply bg-violet-500/40 text-white;
   }
 }
+
+/* iOS Safari zooms the page when a form field is smaller than 16px. */
+@media (max-width: 640px) {
+  input,
+  textarea,
+  select {
+    font-size: 16px !important;
+  }
+}

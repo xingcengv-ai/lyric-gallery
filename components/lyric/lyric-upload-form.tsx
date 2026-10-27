@@ -160,7 +160,7 @@ function Field({
         name={name}
         required={required}
         placeholder={placeholder}
-        className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3.5 text-sm font-normal outline-none transition placeholder:text-zinc-600 focus:border-violet-400/60"
+        className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3.5 text-base font-normal outline-none transition placeholder:text-zinc-600 focus:border-violet-400/60 sm:text-sm"
       />
     </label>
   );

@@ -56,7 +56,7 @@ export function LyricGallery({
           onChange={(event) => setKeyword(event.target.value)}
           placeholder="搜索歌曲或歌手"
           aria-label="搜索歌曲或歌手"
-          className="w-full rounded-2xl border border-white/10 bg-white/5 py-4 pl-12 pr-10 text-sm outline-none transition placeholder:text-zinc-600 focus:border-violet-400/50 focus:bg-white/[0.07]"
+          className="w-full rounded-2xl border border-white/10 bg-white/5 py-4 pl-12 pr-10 text-base outline-none transition placeholder:text-zinc-600 focus:border-violet-400/50 focus:bg-white/[0.07] sm:text-sm"
         />
         {keyword && (
           <button
