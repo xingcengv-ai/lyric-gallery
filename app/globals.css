@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-white/10;
+  }
+  html {
+    @apply scroll-smooth bg-background;
+  }
+  body {
+    @apply min-h-screen bg-background text-foreground antialiased;
+    font-family:
+      Inter,
+      ui-sans-serif,
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "PingFang SC",
+      "Microsoft YaHei",
+      sans-serif;
+    background-image:
+      radial-gradient(
+        circle at 15% 0%,
+        rgba(112, 72, 255, 0.16),
+        transparent 28rem
+      ),
+      radial-gradient(
+        circle at 85% 10%,
+        rgba(0, 202, 255, 0.1),
+        transparent 25rem
+      );
+  }
+  ::selection {
+    @apply bg-violet-500/40 text-white;
+  }
+}
