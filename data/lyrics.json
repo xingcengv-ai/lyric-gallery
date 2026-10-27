@@ -3,7 +3,7 @@
     "id": "qingtian",
     "title": "晴天",
     "artist": "周杰伦",
-    "cover": "/images/lyrics/qingtian.png",
+    "cover": "/images/lyrics/qingtian.jpg",
     "description": "关于青春、遗憾与回忆的温柔告白。",
     "tags": ["青春", "爱情"],
     "year": 2003
@@ -12,7 +12,7 @@
     "id": "daoxiang",
     "title": "稻香",
     "artist": "周杰伦",
-    "cover": "/images/lyrics/daoxiang.png",
+    "cover": "/images/lyrics/daoxiang.jpg",
     "description": "在疲惫时回望最初的快乐与勇气。",
     "tags": ["治愈", "童年"],
     "year": 2008
@@ -21,7 +21,7 @@
     "id": "later",
     "title": "后来",
     "artist": "刘若英",
-    "cover": "/images/lyrics/later.png",
+    "cover": "/images/lyrics/later.jpg",
     "description": "成长之后，才读懂那段没能说出口的爱情。",
     "tags": ["遗憾", "回忆"],
     "year": 2000
@@ -30,7 +30,7 @@
     "id": "night-sky",
     "title": "夜空中最亮的星",
     "artist": "逃跑计划",
-    "cover": "/images/lyrics/night-sky.png",
+    "cover": "/images/lyrics/night-sky.jpg",
     "description": "献给每一个在黑暗里依然仰望的人。",
     "tags": ["梦想", "星空"],
     "year": 2011
@@ -39,7 +39,7 @@
     "id": "mojito",
     "title": "Mojito",
     "artist": "周杰伦",
-    "cover": "/images/lyrics/mojito.png",
+    "cover": "/images/lyrics/mojito.jpg",
     "description": "海风、咖啡与盛夏的一场轻快邂逅。",
     "tags": ["夏日", "浪漫"],
     "year": 2020
@@ -48,7 +48,7 @@
     "id": "far-away",
     "title": "远方",
     "artist": "朴树",
-    "cover": "/images/lyrics/far-away.png",
+    "cover": "/images/lyrics/far-away.jpg",
     "description": "通往远方的路上，藏着自由与想象。",
     "tags": ["旅途", "自由"],
     "year": 2003

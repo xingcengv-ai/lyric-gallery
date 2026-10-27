@@ -3,8 +3,9 @@ import { Sparkles } from "lucide-react";
 
 const navigation = [
   { label: "首页", href: "/" },
-  { label: "发现", href: "/#gallery" },
+  { label: "发现", href: "/discover" },
   { label: "收藏", href: "/favorites" },
+  { label: "关于", href: "/about" },
   { label: "上传作品", href: "/upload" },
 ];
 export function SiteHeader(): React.ReactElement {
