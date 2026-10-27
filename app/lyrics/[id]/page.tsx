@@ -50,7 +50,7 @@ export default async function LyricDetailPage({
         <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,1fr)_360px]">
           <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.03] p-2 shadow-glow">
             <Image
-              src={lyric.cover}
+              src={publicAssetPath(lyric.cover)}
               alt={`${lyric.title} · ${lyric.artist} 歌词海报`}
               width={1200}
               height={1500}

@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { ImagePlus, Search, X } from "lucide-react";
 import { LyricCard } from "@/components/lyric/lyric-card";
@@ -17,7 +17,19 @@ export function LyricGallery({
   const [selectedUpload, setSelectedUpload] = useState<UploadedLyric | null>(
     null,
   );
+  const [isMobileSearchOpen, setIsMobileSearchOpen] = useState(false);
+  const mobileSearchRef = useRef<HTMLInputElement>(null);
   useEffect(() => setUploads(getLocalUploads()), []);
+  useEffect(() => {
+    if (!isMobileSearchOpen) return;
+
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    window.requestAnimationFrame(() => mobileSearchRef.current?.focus());
+    return () => {
+      document.body.style.overflow = originalOverflow;
+    };
+  }, [isMobileSearchOpen]);
   const allLyrics = useMemo(() => [...uploads, ...lyrics], [lyrics, uploads]);
   const results = useMemo(() => {
     const q = keyword.trim().toLocaleLowerCase();
@@ -49,7 +61,19 @@ export function LyricGallery({
           </Link>
         </div>
       </div>
-      <div className="relative mb-8 max-w-xl">
+      <div className="relative mb-8 max-w-xl sm:hidden">
+        <button
+          type="button"
+          onClick={() => setIsMobileSearchOpen(true)}
+          className="flex w-full items-center rounded-2xl border border-white/10 bg-white/5 py-4 pl-12 pr-10 text-left text-base text-zinc-200"
+        >
+          <Search className="pointer-events-none absolute left-4 size-5 text-zinc-500" />
+          <span className={keyword ? "" : "text-zinc-600"}>
+            {keyword || "搜索歌曲或歌手"}
+          </span>
+        </button>
+      </div>
+      <div className="relative mb-8 hidden max-w-xl sm:block">
         <Search className="pointer-events-none absolute left-4 top-1/2 size-5 -translate-y-1/2 text-zinc-500" />
         <input
           value={keyword}
@@ -88,6 +112,29 @@ export function LyricGallery({
         lyric={selectedUpload}
         onClose={() => setSelectedUpload(null)}
       />
+      {isMobileSearchOpen && (
+        <div className="fixed inset-0 z-50 bg-[#07070a] px-5 pt-[max(env(safe-area-inset-top),1.25rem)] sm:hidden">
+          <div className="relative">
+            <Search className="pointer-events-none absolute left-4 top-1/2 size-5 -translate-y-1/2 text-zinc-500" />
+            <input
+              ref={mobileSearchRef}
+              value={keyword}
+              onChange={(event) => setKeyword(event.target.value)}
+              placeholder="搜索歌曲或歌手"
+              aria-label="搜索歌曲或歌手"
+              className="w-full rounded-2xl border border-violet-400/50 bg-white/10 py-4 pl-12 pr-24 text-base outline-none placeholder:text-zinc-600"
+            />
+            <button
+              type="button"
+              onClick={() => setIsMobileSearchOpen(false)}
+              className="absolute right-2 top-1/2 -translate-y-1/2 rounded-xl px-3 py-2 text-sm font-medium text-violet-200"
+            >
+              完成
+            </button>
+          </div>
+          <p className="mt-4 text-sm text-zinc-500">输入歌名或歌手进行筛选</p>
+        </div>
+      )}
     </section>
   );
 }

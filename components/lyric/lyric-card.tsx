@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import type { Lyric, UploadedLyric } from "@/types/lyric";
+import { publicAssetPath } from "@/lib/utils";
 
 export function LyricCard({
   lyric,
@@ -62,7 +63,7 @@ function CardContent({
           />
         ) : (
           <Image
-            src={lyric.cover}
+            src={publicAssetPath(lyric.cover)}
             alt={`${lyric.title} · ${lyric.artist} 歌词海报`}
             width={800}
             height={1000}
